@@ -1,9 +1,9 @@
 {
   "name": "components-page",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "dev": "vuepress dev docs --temp .temp",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
