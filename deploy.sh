@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:zwl098/conponents-page.git master:gh-pages
+git push -f git@github.com:zwl098/conponents-page.git main:gh-pages
 
 cd -
