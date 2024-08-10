@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>STable（通用列表组件） | zhangwenling&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="some technical articles on programming, especially webgl">
+    
+    <link rel="preload" href="/conponents-page/assets/css/0.styles.26242e95.css" as="style"><link rel="preload" href="/conponents-page/assets/js/app.89a463a8.js" as="script"><link rel="preload" href="/conponents-page/assets/js/2.16f2c7dd.js" as="script"><link rel="preload" href="/conponents-page/assets/js/1.e1aa27c3.js" as="script"><link rel="preload" href="/conponents-page/assets/js/27.b019e683.js" as="script"><link rel="prefetch" href="/conponents-page/assets/js/10.0fdacb75.js"><link rel="prefetch" href="/conponents-page/assets/js/11.36b97ebb.js"><link rel="prefetch" href="/conponents-page/assets/js/12.be537a12.js"><link rel="prefetch" href="/conponents-page/assets/js/13.6369332e.js"><link rel="prefetch" href="/conponents-page/assets/js/14.4673512e.js"><link rel="prefetch" href="/conponents-page/assets/js/15.8d0722a4.js"><link rel="prefetch" href="/conponents-page/assets/js/16.b0b6e33b.js"><link rel="prefetch" href="/conponents-page/assets/js/17.10ba81a9.js"><link rel="prefetch" href="/conponents-page/assets/js/18.a01b6027.js"><link rel="prefetch" href="/conponents-page/assets/js/19.d81a04ea.js"><link rel="prefetch" href="/conponents-page/assets/js/20.4534a872.js"><link rel="prefetch" href="/conponents-page/assets/js/21.030f452a.js"><link rel="prefetch" href="/conponents-page/assets/js/22.2901c590.js"><link rel="prefetch" href="/conponents-page/assets/js/23.a4afcb7b.js"><link rel="prefetch" href="/conponents-page/assets/js/24.afa0ddb6.js"><link rel="prefetch" href="/conponents-page/assets/js/25.d66b3ca9.js"><link rel="prefetch" href="/conponents-page/assets/js/26.d35c93ad.js"><link rel="prefetch" href="/conponents-page/assets/js/28.3c2672cd.js"><link rel="prefetch" href="/conponents-page/assets/js/29.93de726c.js"><link rel="prefetch" href="/conponents-page/assets/js/3.6d852873.js"><link rel="prefetch" href="/conponents-page/assets/js/30.ff034e66.js"><link rel="prefetch" href="/conponents-page/assets/js/31.c1adf09d.js"><link rel="prefetch" href="/conponents-page/assets/js/32.23a7c0a0.js"><link rel="prefetch" href="/conponents-page/assets/js/4.8ad7f4ae.js"><link rel="prefetch" href="/conponents-page/assets/js/5.de53c724.js"><link rel="prefetch" href="/conponents-page/assets/js/6.78868ed9.js"><link rel="prefetch" href="/conponents-page/assets/js/7.7e58b9c4.js"><link rel="prefetch" href="/conponents-page/assets/js/vendors~docsearch.2493936b.js">
+    <link rel="stylesheet" href="/conponents-page/assets/css/0.styles.26242e95.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/conponents-page/" class="home-link router-link-active"><!----> <span class="site-name">zhangwenling's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/conponents-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="地址" class="dropdown-title"><span class="title">地址</span> <span class="arrow down"></span></button> <button type="button" aria-label="地址" class="mobile-dropdown-title"><span class="title">地址</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/zhangwinwin/FEBlog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="日志" class="dropdown-title"><span class="title">日志</span> <span class="arrow down"></span></button> <button type="button" aria-label="日志" class="mobile-dropdown-title"><span class="title">日志</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/conponents-page/guide/Tag.html" class="nav-link">
+  日志
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/conponents-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="地址" class="dropdown-title"><span class="title">地址</span> <span class="arrow down"></span></button> <button type="button" aria-label="地址" class="mobile-dropdown-title"><span class="title">地址</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/zhangwinwin/FEBlog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="日志" class="dropdown-title"><span class="title">日志</span> <span class="arrow down"></span></button> <button type="button" aria-label="日志" class="mobile-dropdown-title"><span class="title">日志</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/conponents-page/guide/Tag.html" class="nav-link">
+  日志
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>系统组件库</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/conponents-page/guide/CheckBoxSelect.html" class="sidebar-link">CheckBoxSelect</a></li><li><a href="/conponents-page/guide/Ellipsis.html" class="sidebar-link">Ellipsis (省略提示组件)</a></li><li><a href="/conponents-page/guide/MySwitch.html" class="sidebar-link">MySwitch(权限开关组件)</a></li><li><a href="/conponents-page/guide/SSelect（适用于数据量大的select组件）.html" class="sidebar-link">SSelect（适用于数据量大的 select 组件）</a></li><li><a href="/conponents-page/guide/STable（通用列表组件).html" class="active sidebar-link">STable（通用列表组件）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/conponents-page/guide/STable（通用列表组件).html#stable-通用列表组件" class="sidebar-link">STable（通用列表组件）</a></li><li class="sidebar-sub-header"><a href="/conponents-page/guide/STable（通用列表组件).html#例子-1" class="sidebar-link">例子 1</a></li><li class="sidebar-sub-header"><a href="/conponents-page/guide/STable（通用列表组件).html#例子-2" class="sidebar-link">例子 2</a></li></ul></li><li><a href="/conponents-page/guide/TableV2.html" class="sidebar-link">StableV2 (虚拟表格组件)</a></li><li><a href="/conponents-page/guide/Tag.html" class="sidebar-link">Tag(自定义颜色tag组件)</a></li><li><a href="/conponents-page/guide/TimeRange（时间范围选择）.html" class="sidebar-link">TimeRange（时间范围选择）</a></li><li><a href="/conponents-page/guide/UploadV2.html" class="sidebar-link">UploadV2(上传组件)</a></li><li><a href="/conponents-page/guide/VoucherPage（图片_凭证展示）.html" class="sidebar-link">VoucherPage(图片凭证展示)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="stable-通用列表组件"><a href="#stable-通用列表组件" class="header-anchor">#</a> STable（通用列表组件）</h2> <h2 id="例子-1"><a href="#例子-1" class="header-anchor">#</a> 例子 1</h2> <p>（基础使用）</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>​
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>s<span class="token operator">-</span>table
+    ref<span class="token operator">=</span><span class="token string">&quot;table&quot;</span>
+    <span class="token operator">:</span>rowKey<span class="token operator">=</span><span class="token string">&quot;(record) =&gt; record.data.id&quot;</span>
+    <span class="token operator">:</span>columns<span class="token operator">=</span><span class="token string">&quot;columns&quot;</span>
+    <span class="token operator">:</span>data<span class="token operator">=</span><span class="token string">&quot;loadData&quot;</span>
+    <span class="token operator">:</span>rowSelection<span class="token operator">=</span><span class="token string">&quot;{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }&quot;</span>
+  <span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>s<span class="token operator">-</span>table<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+​
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+  <span class="token keyword">import</span> STable <span class="token keyword">from</span> <span class="token string">'@/components'</span>
+​
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      STable
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'规则编号'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'no'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'服务调用次数'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'callNo'</span><span class="token punctuation">,</span>
+            sorter<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            needTotal<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">customRender</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> text <span class="token operator">+</span> <span class="token string">' 次'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'状态'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'status'</span><span class="token punctuation">,</span>
+            needTotal<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            dict<span class="token operator">:</span> <span class="token string">'dictName'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'链接'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'link'</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">text<span class="token punctuation">,</span> record</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'更新时间'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'updatedAt'</span><span class="token punctuation">,</span>
+            sorter<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            type<span class="token operator">:</span> <span class="token string">'dateTime'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// 查询条件参数</span>
+        queryParam<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 加载数据方法 必须为 Promise 对象</span>
+        <span class="token function-variable function">loadData</span><span class="token operator">:</span> <span class="token parameter">parameter</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/service'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            params<span class="token operator">:</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>parameter<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queryParam<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> res<span class="token punctuation">.</span>result
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        selectedRowKeys<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        selectedRows<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onSelectChange</span> <span class="token punctuation">(</span><span class="token parameter">selectedRowKeys<span class="token punctuation">,</span> selectedRows</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>selectedRowKeys <span class="token operator">=</span> selectedRowKeys
+         <span class="token keyword">this</span><span class="token punctuation">.</span>selectedRows <span class="token operator">=</span> selectedRows
+       <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+​
+</code></pre></div><h2 id="例子-2"><a href="#例子-2" class="header-anchor">#</a> 例子 2</h2> <p>（简单的表格，最后一列是各种操作）</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>s<span class="token operator">-</span>table
+    ref<span class="token operator">=</span><span class="token string">&quot;table&quot;</span>
+    <span class="token operator">:</span>columns<span class="token operator">=</span><span class="token string">&quot;columns&quot;</span>
+    <span class="token operator">:</span>data<span class="token operator">=</span><span class="token string">&quot;loadData&quot;</span>
+  <span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>span slot<span class="token operator">=</span><span class="token string">&quot;action&quot;</span> slot<span class="token operator">-</span>scope<span class="token operator">=</span><span class="token string">&quot;text, record&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>编辑<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>button2<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>button3<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span>button4<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>s<span class="token operator">-</span>table<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+​
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+  <span class="token keyword">import</span> STable <span class="token keyword">from</span> <span class="token string">'@/components/table/'</span>
+​
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      STable
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'规则编号'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'no'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'状态'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'status'</span><span class="token punctuation">,</span>
+            dict<span class="token operator">:</span> <span class="token string">'dictName'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">'更新时间'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'updatedAt'</span><span class="token punctuation">,</span>
+            type<span class="token operator">:</span> <span class="token string">'dateTime'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            table<span class="token operator">:</span> <span class="token string">'操作'</span><span class="token punctuation">,</span>
+            dataIndex<span class="token operator">:</span> <span class="token string">'action'</span><span class="token punctuation">,</span>
+            scopedSlots<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">customRender</span><span class="token operator">:</span> <span class="token string">'action'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// 查询条件参数</span>
+        queryParam<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 加载数据方法 必须为 Promise 对象</span>
+        <span class="token function-variable function">loadData</span><span class="token operator">:</span> <span class="token parameter">parameter</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/service'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            params<span class="token operator">:</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>parameter<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queryParam<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> res<span class="token punctuation">.</span>result
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">edit</span><span class="token punctuation">(</span><span class="token parameter">row</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// axios 发送数据到后端 修改数据成功后</span>
+        <span class="token comment">// 调用 refresh() 重新加载列表数据</span>
+        <span class="token comment">// 这里 setTimeout 模拟发起请求的网络延迟..</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>table<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// refresh() 不传参默认值 false 不刷新到分页第一页</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1500</span><span class="token punctuation">)</span>
+​
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="methods"><a href="#methods" class="header-anchor">#</a> Methods</h3> <hr> <blockquote><p>通过 <code>this.$refs.table</code> 调用</p></blockquote> <p>1、<code>this.$refs.table.refresh(true)</code> 刷新列表 (用户新增/修改数据后，重载列表数据)</p> <blockquote><p>注意：要调用 <code>refresh(bool)</code> 需要给表格组件设定 <code>ref</code> 值<code>refresh()</code> 方法可以传一个 <code>bool</code> 值，当有传值 或值为 <code>true</code> 时，则刷新时会强制刷新到第一页（常用户页面 搜索 按钮进行搜索时，结果从第一页开始分页）</p></blockquote> <p>2、<code>this.$refs.table.clearRefreshSelected(true)</code> 刷新并清空已选</p> <blockquote><p><code>clearRefreshSelected</code> 方法可以传一个 <code>bool</code> 值，当有传值 或值为 <code>true</code> 时，则刷新时会强制刷新到第一页（常用户页面 搜索 按钮进行搜索时，结果从第一页开始分页）</p></blockquote> <p>3、<code>this.$refs.table.clearSelected()</code> 清空已选项</p> <p>4、 this.$refs.table.updateSelect(this.selectedRowKeys, this.selectedRows) 更新选中项</p> <h3 id="props"><a href="#props" class="header-anchor">#</a> Props</h3> <hr> <blockquote><p>除去 <code>a-table</code> 自带属性外，还而外提供了一些额外属性属性</p></blockquote> <table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>alert</td> <td>设置是否显示表格上方选中信息栏（需配合 rowSelection 使用）</td> <td>[object, boolean]</td> <td>-</td> <td>null</td></tr> <tr><td>data</td> <td>加载数据方法 必须为 Promise 对象（和 a-table 的 dataSource 属性二选一，一个属获取数据的接口方法，一个是处理好的数组）</td> <td>Promise</td> <td>-</td> <td>-</td></tr> <tr><td>columns</td> <td>表格列的配置描述，具体项见下表</td> <td>array</td> <td>-</td> <td>-</td></tr> <tr><td>sorter</td> <td>初始化排序对象</td> <td>Object</td> <td>-</td> <td>-</td></tr> <tr><td>cache</td> <td>是否缓存自定义列勾选</td> <td>Boolean</td> <td>-</td> <td>-</td></tr> <tr><td>autoLoad</td> <td>初始化时是否自动加载列表</td> <td>Boolean</td> <td>-</td> <td>-</td></tr> <tr><td>rowKey</td> <td>列表数据的唯一标识，不可重复</td> <td>[String, Function]</td> <td>-</td> <td>key</td></tr> <tr><td>pageNum</td> <td>当前页数</td> <td>Number</td> <td>-</td> <td>1</td></tr> <tr><td>pageSize</td> <td>每页条数</td> <td>Number</td> <td>-</td> <td>10</td></tr> <tr><td>showSizeChanger</td> <td>是否可以改变 pageSize</td> <td>Boolean</td> <td>-</td> <td>true</td></tr> <tr><td>size</td> <td>当为「small」时，是小尺寸分页</td> <td>String</td> <td>-</td> <td>small</td></tr> <tr><td>showTools</td> <td>是否展示表格右上方工具栏</td> <td>Boolean</td> <td>-</td> <td>true</td></tr> <tr><td>rowSelection</td> <td>https://1x.antdv.com/components/table-cn/#rowSelection</td> <td>Object</td> <td>-</td> <td>null</td></tr> <tr><td>showPagination</td> <td>显示分页选择器</td> <td>[string, boolean]</td> <td>'auto'</td> <td>boolean</td></tr> <tr><td>dataSource</td> <td>数据源</td> <td>Array</td> <td>-</td> <td>-</td></tr> <tr><td>pageURI</td> <td>enable page URI mode</td> <td>Boolean</td> <td>-</td> <td>false</td></tr> <tr><td>extraTool</td> <td>添加额外的右上方工具项</td> <td>Array</td> <td>-</td> <td>[]</td></tr></tbody></table> <p><code>extraTool</code>的属性数组</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token literal-property property">extraTool</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">&quot;reload&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">&quot;刷新&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">&quot;column-height&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">&quot;密度&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">isDropdown</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">menu</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> key <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>customSize <span class="token operator">=</span> key
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>a<span class="token operator">-</span>menu slot<span class="token operator">=</span><span class="token string">&quot;overlay&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>onClick<span class="token punctuation">}</span> selectable defaultSelectedKeys<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>customSize<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+                           <span class="token operator">&lt;</span>a<span class="token operator">-</span>menu<span class="token operator">-</span>item key<span class="token operator">=</span><span class="token string">&quot;default&quot;</span><span class="token operator">&gt;</span>默认<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>menu<span class="token operator">-</span>item<span class="token operator">&gt;</span>                 <span class="token operator">&lt;</span>a<span class="token operator">-</span>menu<span class="token operator">-</span>item key<span class="token operator">=</span><span class="token string">&quot;middle&quot;</span><span class="token operator">&gt;</span>中等<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>menu<span class="token operator">-</span>item<span class="token operator">&gt;</span>                 
+          <span class="token operator">&lt;</span>a<span class="token operator">-</span>menu<span class="token operator">-</span>item key<span class="token operator">=</span><span class="token string">&quot;small&quot;</span><span class="token operator">&gt;</span>紧凑<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>menu<span class="token operator">-</span>item<span class="token operator">&gt;</span>               
+        <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">-</span>menu<span class="token operator">&gt;</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">&quot;setting&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">&quot;列设置&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">isDropdown</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">menu</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>columnSetting
+          slot<span class="token operator">=</span><span class="token string">&quot;overlay&quot;</span>
+          columns<span class="token operator">=</span><span class="token punctuation">{</span>columns<span class="token punctuation">}</span>
+          onColumnChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">val</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            changed <span class="token operator">=</span> <span class="token boolean">true</span>
+            settingColumns <span class="token operator">=</span> val
+          <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre></div><p><code>alert</code> 属性对象：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token literal-property property">alert</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  show<span class="token operator">:</span> Boolean<span class="token punctuation">,</span>  
+  clear<span class="token operator">:</span> <span class="token punctuation">[</span>Function<span class="token punctuation">,</span> Boolean<span class="token punctuation">]</span><span class="token comment">//清空按钮</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Columns Options:</p> <table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>type</td> <td>展示类型</td> <td>string</td> <td>text</td> <td>badge</td></tr> <tr><td>dict</td> <td>字典名称 type 为 text、badge、link、tag 时生效</td> <td>string</td> <td>-</td> <td>-</td></tr> <tr><td>onClick</td> <td>点击事件回调方法，使用箭头函数,回调参数为 text,record</td> <td>function</td> <td>-</td> <td>-</td></tr> <tr><td>ellipsis</td> <td>type 为 text、link 时，内容长度超过，则隐藏</td> <td>number</td> <td>-</td> <td>-</td></tr> <tr><td>colors</td> <td>type 为 tag、badge 时的颜色配置,该字段为空且 dict 不为空时，取字典中的颜色</td> <td>object</td> <td>array</td> <td>-</td></tr> <tr><td>format</td> <td>type 为 date、dateTime 时的 moment 格式化配置</td> <td>object</td> <td>array</td> <td>-</td></tr> <tr><td>buttons</td> <td>操作按钮配置 见 Buttons Options</td> <td>array</td> <td>-</td> <td>-</td></tr> <tr><td>showNumber</td> <td>操作按钮显示个数,超过数量折叠显示</td> <td>number</td> <td>-</td> <td>2</td></tr> <tr><td>permission</td> <td>按钮显示权限。传数组时，只要拥有其中一个权限就显示,以感叹号开头代表无该项权限!brDeposit:getALlPhone</td> <td>string</td> <td>array</td> <td>-</td></tr> <tr><td>describe</td> <td>表头描述</td> <td>string</td> <td>-</td> <td>-</td></tr> <tr><td>needTotal</td> <td>选中项统计（需配合 alert 和 rowSelection 使用）</td> <td>Boolean</td> <td>-</td> <td>-</td></tr> <tr><td>fold</td> <td>多级表头可展开配置 （添加该字段启用表头展开功能；true 默认展开，false 默认关闭）</td> <td>Boolean</td> <td>true</td> <td>false</td></tr></tbody></table> <p>Buttons Options:</p> <table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>name</td> <td>名称</td> <td>string</td> <td>-</td> <td>-</td></tr> <tr><td>onClick</td> <td>点击事件回调，使用箭头函数</td> <td>fn</td> <td>-</td> <td>-</td></tr> <tr><td>permission</td> <td>按钮显示权限。传数组时，只要拥有其中一个权限就显示</td> <td>string</td> <td>array</td> <td>-</td></tr> <tr><td>visible</td> <td>按钮是否显示判断方法</td> <td>boolean function</td> <td>-</td> <td>-</td></tr></tbody></table> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">'操作'</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token string">'100px'</span><span class="token punctuation">,</span>
+        align<span class="token operator">:</span><span class="token string">'center'</span><span class="token punctuation">,</span>
+        fixed<span class="token operator">:</span><span class="token string">'right'</span><span class="token punctuation">,</span>
+        dataIndex<span class="token operator">:</span> <span class="token string">'action'</span><span class="token punctuation">,</span>
+        type<span class="token operator">:</span> <span class="token string">'button'</span><span class="token punctuation">,</span>
+        buttons<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            name<span class="token operator">:</span> <span class="token string">'详情'</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">text<span class="token punctuation">,</span> record</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>detailForm<span class="token punctuation">.</span><span class="token function">detail</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            permission<span class="token operator">:</span> <span class="token string">'brDeposit:detail'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            name<span class="token operator">:</span> <span class="token string">'退定'</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">text<span class="token punctuation">,</span> record</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>detailForm<span class="token punctuation">.</span><span class="token function">detail</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">visible</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">text<span class="token punctuation">,</span> record</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasPerm</span><span class="token punctuation">(</span><span class="token string">'brDeposit:unsubscribe'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>record<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">2</span> <span class="token operator">||</span> record<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">3</span> <span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>按钮判断条件复杂时建议使用插槽方式（不需要加分割线， 默认显示 2 个，超出隐藏，可以通过 showNumber 属性修改）</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code>  <span class="token operator">&lt;</span>template #action<span class="token operator">=</span><span class="token string">&quot;{text, record}&quot;</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a
+            v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;(hasPerm('brDeposit:edit') &amp; record.status === 2) &amp;&amp; (userInfo.orgId==record.orgId || userInfo.orgId=='0'&quot;</span>
+            @click<span class="token operator">=</span><span class="token string">&quot;$refs.checkForm.check(record, formData)&quot;</span>
+          <span class="token operator">&gt;</span>
+            核验
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a
+            @click<span class="token operator">=</span><span class="token string">&quot;$refs.detailForm.detail(record)&quot;</span>
+            v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;hasPerm('brDeposit:detail')&quot;</span>
+          <span class="token operator">&gt;</span>
+            详情
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a
+            @click<span class="token operator">=</span><span class="token string">&quot;$refs.unsubscribeForm.unsubscribe(record,formData)&quot;</span>
+            v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;hasPerm('brDeposit:unsubscribe') &amp; (record.status === 2 || record.status === 3 )&quot;</span>
+          <span class="token operator">&gt;</span>
+            退定
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a
+            @click<span class="token operator">=</span><span class="token string">&quot;$refs.examineForm.examine(record)&quot;</span>
+            v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;hasPerm('brDeposit:examine') &amp; record.status === 4&quot;</span>
+          <span class="token operator">&gt;</span>
+            审核
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a
+            @click<span class="token operator">=</span><span class="token string">&quot;$refs.editForm.edit(record, formData)&quot;</span>
+            v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;hasPerm('brDeposit:editInfo') &amp;&amp; record.orderNum === record.useNum &amp;&amp; record.appointmentStatus == 0&quot;</span>
+          <span class="token operator">&gt;</span>
+            编辑
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>a
+            @click<span class="token operator">=</span><span class="token string">&quot;$refs.resetAssociation.init(record)&quot;</span>
+            v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;hasPerm('brDeposit:resetAssociation') &amp;&amp; record.status != 1 &amp;&amp; record.status != 2 &amp;&amp; record.status != 6&quot;</span>
+          <span class="token operator">&gt;</span>
+            重新关联
+          <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">'操作'</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token string">'100px'</span><span class="token punctuation">,</span>
+        align<span class="token operator">:</span><span class="token string">'center'</span><span class="token punctuation">,</span>
+        fixed<span class="token operator">:</span><span class="token string">'right'</span><span class="token punctuation">,</span>
+        dataIndex<span class="token operator">:</span> <span class="token string">'action'</span><span class="token punctuation">,</span>
+        type<span class="token operator">:</span> <span class="token string">'button'</span><span class="token punctuation">,</span>
+        scopedSlots<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">customRender</span><span class="token operator">:</span> <span class="token string">'action'</span><span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+</code></pre></div><p>字典</p> <table><thead><tr><th>字典值</th> <th>说明</th> <th>获取方法</th></tr></thead> <tbody><tr><td>department</td> <td>事业部</td> <td>this.$store.dispatch('dict/getDepartments').then(res =&gt; { this.departments = res })</td></tr> <tr><td>store</td> <td>门店</td> <td>this.$store.dispatch('dict/getStores', {params: {}}).then(res =&gt; { this.stores = res })</td></tr> <tr><td>brand</td> <td>品牌</td> <td>this.$store.dispatch('dict/getBrands', {params: {}}).then(res =&gt; { this.brands = res })</td></tr> <tr><td>channel</td> <td>渠道</td> <td>this.$store.dispatch('dict/getChannels', {params: {}}).then(res =&gt; { this.channels = res })</td></tr> <tr><td>bookingItem</td> <td>项目</td> <td>this.$store.dispatch('dict/getBookingItems', {params: {}}).then(res =&gt; { this.bookingItems = res })</td></tr> <tr><td>tag</td> <td>标签</td> <td>this.$store.dispatch('dict/getTags', {params: {}}).then(res =&gt; { this.tags = res })</td></tr> <tr><td>post</td> <td>职位</td> <td>this.$store.dispatch('dict/getPostMap', {}).then(res =&gt; { this.postMap = res })</td></tr></tbody></table> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 表格中的数据只需要配置相应的字典值就能显示对应的中文；如果需要单独获取数据，请使用vuex获取</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mdmStoreList<span class="token punctuation">,</span> mdmDepartmentList<span class="token punctuation">,</span> mdmChannelList<span class="token punctuation">,</span> mdmBrandList<span class="token punctuation">,</span> mdmBookingItemTree<span class="token punctuation">,</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/store/api'</span>
+​
+<span class="token function">mdmStoreList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+​
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+​
+<span class="token operator">...</span>
+​
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/conponents-page/guide/SSelect（适用于数据量大的select组件）.html" class="prev">
+        SSelect（适用于数据量大的 select 组件）
+      </a></span> <span class="next"><a href="/conponents-page/guide/TableV2.html">
+        StableV2 (虚拟表格组件)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/conponents-page/assets/js/app.89a463a8.js" defer></script><script src="/conponents-page/assets/js/2.16f2c7dd.js" defer></script><script src="/conponents-page/assets/js/1.e1aa27c3.js" defer></script><script src="/conponents-page/assets/js/27.b019e683.js" defer></script>
+  </body>
+</html>
