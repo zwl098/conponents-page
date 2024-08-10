@@ -85,7 +85,7 @@
 
 （简单的表格，最后一列是各种操作）
 
-```text
+```javascript
 <template>
   <s-table
     ref="table"
@@ -204,48 +204,56 @@
 
 `extraTool`的属性数组
 
-```text
- extraTool: [
-          {
-            icon: 'reload',
-            title: '刷新',
-            onClick: () => {
-              this.refresh()
-            }
-          },
-          {
-            icon: 'column-height',
-            title: '密度',
-            isDropdown: true,
-            menu: () => {
-              const onClick = ({ key }) => {
-                this.customSize = key
-              }
-              return (
-                <a-menu slot="overlay" onClick={onClick} selectable defaultSelectedKeys={[this.customSize]}>
-                  <a-menu-item key="default">默认</a-menu-item>
-                  <a-menu-item key="middle">中等</a-menu-item>
-                  <a-menu-item key="small">紧凑</a-menu-item>
-                </a-menu>
-              )
-            },
-            onClick: () => { }
-          },
-          {
-            icon: 'setting',
-            title: '列设置',
-            isDropdown: true,
-            menu: () => {
-              return <columnSetting slot="overlay" columns={columns} onColumnChange={val => { changed = true; settingColumns = val }} />
-            },
-            onClick: () => { }
-          }
-        ]
+```javascript
+extraTool: [
+  {
+    icon: "reload",
+    title: "刷新",
+    onClick: () => {
+      this.refresh()
+    },
+  },
+  {
+    icon: "column-height",
+    title: "密度",
+    isDropdown: true,
+    menu: () => {
+      const onClick = ({ key }) => {
+        this.customSize = key
+      }
+      return (
+        <a-menu slot="overlay" onClick={onClick} selectable defaultSelectedKeys={[this.customSize]}>
+                           <a-menu-item key="default">默认</a-menu-item>                 <a-menu-item key="middle">中等</a-menu-item>                 
+          <a-menu-item key="small">紧凑</a-menu-item>               
+        </a-menu>
+      )
+    },
+    onClick: () => {},
+  },
+  {
+    icon: "setting",
+    title: "列设置",
+    isDropdown: true,
+    menu: () => {
+      return (
+        <columnSetting
+          slot="overlay"
+          columns={columns}
+          onColumnChange={val => {
+            changed = true
+            settingColumns = val
+          }}
+        />
+      )
+    },
+    onClick: () => {},
+  },
+]
 ```
 
 `alert` 属性对象：
 
-```text
+```javascript
 alert: {
   show: Boolean,  
   clear: [Function, Boolean]//清空按钮
@@ -278,7 +286,7 @@ Buttons Options:
 | permission | 按钮显示权限。传数组时，只要拥有其中一个权限就显示 | string           | array  | -      | -   |
 | visible    | 按钮是否显示判断方法                               | boolean function | -      | -      |
 
-```text
+```javascript
 {
         title: '操作',
         width: '100px',
@@ -309,7 +317,7 @@ Buttons Options:
 
 > 按钮判断条件复杂时建议使用插槽方式（不需要加分割线， 默认显示 2 个，超出隐藏，可以通过 showNumber 属性修改）
 
-```text
+```javascript
   <template #action="{text, record}">
           <a
             v-if="(hasPerm('brDeposit:edit') & record.status === 2) && (userInfo.orgId==record.orgId || userInfo.orgId=='0'"
@@ -351,7 +359,7 @@ Buttons Options:
 
 ```
 
-```text
+```javascript
 {
         title: '操作',
         width: '100px',
@@ -375,7 +383,7 @@ Buttons Options:
 | tag         | 标签   | this.$store.dispatch('dict/getTags', {params: {}}).then(res => { this.tags = res })                 |
 | post        | 职位   | this.$store.dispatch('dict/getPostMap', {}).then(res => { this.postMap = res })                     |
 
-```text
+```javascript
 // 表格中的数据只需要配置相应的字典值就能显示对应的中文；如果需要单独获取数据，请使用vuex获取
 import { mdmStoreList, mdmDepartmentList, mdmChannelList, mdmBrandList, mdmBookingItemTree, ... } from '@/store/api'
 ​

@@ -1,4 +1,4 @@
-## StableV2 表格组件
+## StableV2 (虚拟表格组件)
 
 | 参数        | 说明                                                                | 类型    | 可选值 | 默认值                   |
 | ----------- | ------------------------------------------------------------------- | ------- | ------ | ------------------------ |
@@ -45,7 +45,7 @@ Buttons Options:
 | permission | 按钮显示权限。传数组时，只要拥有其中一个权限就显示 | string           | array  | -      |
 | visible    | 按钮是否显示判断方法                               | boolean function | -      | -      |
 
-```line
+```javascript
 {
         title: '操作',
         width: '100px',
@@ -75,7 +75,7 @@ Buttons Options:
 
 > 按钮判断条件复杂时建议使用插槽方式:
 
-```line
+```javascript
 <template #action="{text, record}">
           <a v-if="(hasPerm('brDeposit:edit') & record.status === 2) && (userInfo.orgId==record.orgId || userInfo.orgId=='0' || userInfo.userType!=1 || !departmentSYGJFlag)" @click="$refs.checkForm.check(record, formData)">核验</a>
           <a @click="$refs.detailForm.detail(record)" v-if="hasPerm('brDeposit:detail')">详情</a>
@@ -87,7 +87,7 @@ Buttons Options:
 
 ```
 
-```line
+```javascript
 {
         title: '操作',
         width: '100px',
@@ -132,7 +132,7 @@ sorter：
 
 ![](https://tcs-devops.aliyuncs.com/storage/112za523339fcd08d53d346beed3121650f5?Signature=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBJRCI6IjVlNzQ4MmQ2MjE1MjJiZDVjN2Y5YjMzNSIsIl9hcHBJZCI6IjVlNzQ4MmQ2MjE1MjJiZDVjN2Y5YjMzNSIsIl9vcmdhbml6YXRpb25JZCI6IiIsImV4cCI6MTcyMzgwMTIxOCwiaWF0IjoxNzIzMTk2NDE4LCJyZXNvdXJjZSI6Ii9zdG9yYWdlLzExMnphNTIzMzM5ZmNkMDhkNTNkMzQ2YmVlZDMxMjE2NTBmNSJ9.JbJTgvs0KPNBvbSP2kRlO_8IqBgW9LygSoKmaaJkQDE&download=e19f9e977faf4274afee66eb3033ff12~tplv-k3u1fbpfcp-watermark.png)
 
-```line
+```javascript
 <s-table-v2
 ref="table"
 :columns="hasPerm('returnField:reportManage')?columns:columnEctype"

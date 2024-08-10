@@ -1,4 +1,4 @@
-## 图片凭证展示
+## VoucherPage(图片凭证展示)
 
 ### 属性
 
@@ -9,7 +9,7 @@
 
 ## 示例
 
-```line language
+```javascript language
 <s-table
   ref="photoTable"
   :loading="confirmLoading"
